@@ -1,5 +1,6 @@
     @import "vender/style.css";
     @import "vars.scss";
+    @import "mixins.scss";
     
 
     html {
@@ -12,6 +13,8 @@
     color: $white;
     line-height: 1.5;
     font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+   
 }
 
 *,
@@ -57,6 +60,8 @@ a{
     @import "blocks/related";
     @import "blocks/comments";
     @import "blocks/form";
-   
+    @import "blocks/work";
+    @import "blocks/cabinet";
+    @import "blocks/modal";
     
     

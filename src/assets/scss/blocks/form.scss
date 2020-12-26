@@ -1,6 +1,10 @@
 .form__group{
     margin-bottom: 1.5rem;
     position: relative;
+
+    &--md{
+        margin-bottom: 2.5rem;
+    }
 }
 
 .form__control{
@@ -14,27 +18,29 @@
     border-radius: 0;
     box-sizing: none;
     
-    padding:0.5rem;
+    padding:0.75rem 0 0.75rem;
 
 
     font-family: inherit;
     font-size:1.4rem;
     color:$white;
+    &:focus, &:active{
+        outline:none;
+        
+    }
+    &:focus +.form__line{
+        width:100%;
+        outline: none;
+        border:none;
+    }
 
     &--textarea{
         resize:none;
         height:30px;
         overflow: hidden;
-        &:focus +.form__line{
-            width:100%;
-            outline: none;
-            border:none;
-        }
+       
 
-        &:focus, &:active{
-            outline:none;
-            border:none;
-        }
+      
     }
 
     &::placeholder{
@@ -56,4 +62,34 @@
 
 
     transition: width .2s linear;
+}
+
+.form{
+
+    &--auth{
+        max-width: 280px;
+        margin:0 auto;
+
+    }
+}
+
+.form__footer{
+    &--center{
+        text-align: center;
+    }
+}
+
+.form__footer-list{
+    display:flex;
+    justify-content: center;
+    
+    font-size:1.2rem;
+    line-height: 1.2;
+    li{
+        margin: 0 .5rem;
+    }
+
+    a{
+        color:$white;
+    }
 }
