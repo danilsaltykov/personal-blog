@@ -8,12 +8,21 @@
 .related__list-item{
     margin-bottom: 2.5rem;
     width:50%;
+
+    @include breakpoint($tablet-bp){
+        flex-direction: column;
+        width:100%;
+    }
 }
 
 .related__list{
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
+
+    @include breakpoint($tablet-bp){
+        flex-direction: column;
+    }
 }
 
 .related__list-title{

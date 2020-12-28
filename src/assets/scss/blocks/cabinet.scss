@@ -1,5 +1,10 @@
 .cabinet{
     display:flex;
+
+    @include breakpoint($mobile-bp){
+        flex-direction: column-reverse;
+       
+    }
 }
 
 .cabinet__form{
@@ -11,10 +16,15 @@
 .cabinet__avatar{
     flex-grow:1;
     padding-left: 11rem;
-    
-
     img{
         display:block;
+        margin-bottom: 1.5rem;
+        width:15rem;
+        height:15rem; 
+    }
+
+    @include breakpoint($mobile-bp){
+        padding-left:0;
         margin-bottom: 1.5rem;
     }
 }
