@@ -25,14 +25,17 @@
         background-color: $red;
         box-shadow:0 7px 17px -10px rgba($red, .3);
             &:hover, &:focus{
-                background-color:darken($red, 5%)
+                background-color:darken($red, 5%);
+                outline:none;
             }
     }
     &--blue{
         background-color: $blue;
         box-shadow:0 7px 17px -10px rgba($blue, .3);
         &:hover,&:focus{
-            background-color:darken($blue, 5%)
+            background-color:darken($blue, 5%);
+            outline:none;
+
         }
     }
 

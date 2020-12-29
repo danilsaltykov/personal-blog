@@ -356,12 +356,14 @@ a {
     background-color: #ED3024;
     box-shadow: 0 7px 17px -10px rgba(237, 48, 36, 0.3); }
     .btn--red:hover, .btn--red:focus {
-      background-color: #e51f13; }
+      background-color: #e51f13;
+      outline: none; }
   .btn--blue {
     background-color: #3137C9;
     box-shadow: 0 7px 17px -10px rgba(49, 55, 201, 0.3); }
     .btn--blue:hover, .btn--blue:focus {
-      background-color: #2c31b4; }
+      background-color: #2c31b4;
+      outline: none; }
   .btn--rounded {
     border-radius: 0.41em; }
   .btn--sm {
@@ -1013,6 +1015,8 @@ a {
   transform: translateY(-50%);
   color: transparent;
   font-size: 0; }
+  .burger:active, .burger:focus {
+    outline: none; }
   .burger:before, .burger:after, .burger span {
     display: block;
     width: 100%;
