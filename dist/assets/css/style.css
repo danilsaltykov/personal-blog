@@ -12,8 +12,14 @@ body {
     font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
-body.no-scroll, body.show-sidebar {
+body.no-scroll {
     overflow: hidden;
+}
+
+@media (max-width: 991px) {
+    body.show-sidebar {
+        overflow: hidden;
+    }
 }
 
 *,
@@ -56,9 +62,10 @@ a:hover {
     .show-sidebar .page {
         position: relative;
     }
+}
 
-    .show-sidebar .page:after {
-        content: "";
+@media (max-width: 991px) {
+    .page__mask {
         display: block;
         width: 100%;
         height: 100%;
@@ -498,6 +505,11 @@ a:hover {
     margin: 0 .75rem;
 }
 
+button:active, button:focus {
+    outline: none;
+    border: none;
+}
+
 .btn {
     display: inline-block;
     vertical-align: top;
@@ -635,15 +647,15 @@ a:hover {
 .add-post__form {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-    align-items: center;
+    -ms-flex-align: end;
+    align-items: flex-end;
 }
 
 .add-post__textarea {
     display: block;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    height: 26px;
+    height: 34px;
     overflow: hidden;
     font-family: inherit;
     font-size: 1.5rem;
@@ -1187,7 +1199,7 @@ a:hover {
 
 .form__control--textarea {
     resize: none;
-    height: 30px;
+    height: 32px;
     overflow: hidden;
 }
 
@@ -1416,8 +1428,7 @@ a:hover {
 }
 
 .modal {
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
     -ms-flex-pack: center;
     justify-content: center;
     -ms-flex-align: center;
@@ -1434,17 +1445,39 @@ a:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+.modal.show {
+    display: -ms-flexbox;
+    display: flex;
+}
+
 .modal__content {
     position: relative;
     width: 100%;
     max-width: 500px;
     padding: 8rem;
+    opacity: 0;
     border-radius: 5px;
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    transition: opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+    transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
+    transition: transform 200ms ease-in-out, opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
     background-color: #202020;
+}
+
+@media (max-width: 991px) {
+    .modal__content {
+        padding: 5rem 3rem 3rem;
+    }
 }
 
 .modal__content--contact {
     padding-bottom: 2.5rem;
+}
+
+.modal__content--story {
+    padding: 0;
+    background: none;
 }
 
 .modal__close {
@@ -1488,6 +1521,10 @@ a:hover {
 
 .modal__footer a:hover {
     text-decoration: none;
+}
+
+.modal__video {
+    margin: 0 auto;
 }
 
 .burger {
