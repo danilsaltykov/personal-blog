@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <div class="page">
+    <div class="page" id="page">
         <!-- HEADER-->
             <header class="header">
                 <div class="header__left">
@@ -148,7 +148,7 @@
                 </div> <!-- SIDEBAR CONTENT-->
                 <div class="sidebar__footer">
                     <a class="btn btn--red" href="works.html">Мои работы</a>
-                    <button class="btn btn--blue" type="button">Написать мне</button>
+                    <button class="btn btn--blue btn--message" type="button" data-modal="contact-modal">Написать мне</button>
                 </div>
             </aside>
         <!--MAIN-->
@@ -221,7 +221,7 @@
                     
                                 <form class="form" action="/" method="post">
                                     <div class="form__group">
-                                         <textarea class="form__control form__control--textarea" name="comment-text" placeholder="Текст комментария"></textarea>
+                                         <textarea class="form__control form__control--textarea" name="comment-text" placeholder="Текст комментария" data-autoresize></textarea>
                                          <span class="form__line"></span>
                                     </div>
                                     <button class="btn btn--blue btn--rounded btn--sm" type="submit">Отправить</button>
@@ -280,7 +280,98 @@
             </main>
     </div>  
 
+
+    <div class="modal" id="story-modal">
+        <div class="modal__content modal__content--story">
+            <video class="modal__video" src="" poster="https://placehold.it/400x500">
+            </video>
+        </div>  
+    </div>
     
+
+    <div class="modal" id="contact-modal">
+        <div class="modal__content modal__content--contact">
+            <button class="modal__close" type="button">
+                <img src="../assets/images/cancel.svg" alt="">
+            </button>
+            <form action="/" class="form" method="post">
+        
+    
+                <div class="form__group form__group--md">
+                    <input type="text" class="form__control" placeholder="Ваше имя" >
+                    <span class="form__line"></span>
+                </div>
+            
+                <div class="form__group form__group--md">
+                    <input type="text" class="form__control" placeholder="Ваш email">
+                    <span class="form__line"></span>
+                </div>
+    
+                <div class="form__group form__group--md">
+                    <textarea class="form__control form__control--textarea" name="" placeholder="Текст сообщения" ></textarea>
+                    <span class="form__line"></span>
+                </div>
+            
+                
+            
+            
+                <div class="form__footer">
+                    <div class="form__group form__group--md">
+                        <button class="btn btn--blue btn--rounded btn--sm" type="submit">Отправить</button>
+                    </div>
+            
+                    
+                </div>      
+            
+               
+            </form>
+    
+           
+            <ul class="modal__footer">
+                <li>
+                    email: <a href="mailto:dddsaltykov@gmail.com">ddsaltykov@gmail.com</a> 
+                </li>
+                <li>
+                    тел: <a href="tel: +79876050474"> +987 605 04 74</a> 
+                </li>
+            </ul>
+            
+        </div>      <!--/.modal__content-->
+    </div>      <!--/.modal-->
+    <div class="modal">
+        <div class="modal__content">
+            <button class="modal__close" type="button">
+                <img src="../assets/images/cancel.svg" alt="">
+            </button>
+          
+            <ul class="social">
+                <li class="social__item">
+                    <a class="social__link" href="https://www.instagram.com/thedanil16/">
+                        <img src="../assets/images/share/facebook.svg" alt="">
+                    </a>
+                </li>
+    
+                <li class="social__item">
+                    <a class="social__link" href="https://vk.com/danilsaltykov">
+                        <img src="../assets/images/share/twitter.svg" alt="">
+                    </a>
+                </li>
+    
+                <li class="social__item">
+                    <a class="social__link" href="https://t.me/anonymosDanil">
+                        <img src="../assets/images/share/vk.svg" alt="">
+                    </a>
+                </li>
+    
+                <li class="social__item">
+                    <a class="social__link" href="https://www.instagram.com/thedanil16/">
+                        <img src="../assets/images/share/copy.svg" alt="">
+                    </a>
+                </li>
+            </ul>
+            
+        </div>      <!--/.modal__content-->
+    </div>       
     
 
   

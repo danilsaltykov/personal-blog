@@ -86,28 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/assets/js/app.js":
-/*!******************************!*\
-  !*** ./src/assets/js/app.js ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("console.log('file 1');\r\n\n\n//# sourceURL=webpack:///./src/assets/js/app.js?");
-
-/***/ }),
-
-/***/ "./src/assets/js/file2.js":
-/*!********************************!*\
-  !*** ./src/assets/js/file2.js ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("console.log('file 2');\r\n\n\n//# sourceURL=webpack:///./src/assets/js/file2.js?");
-
-/***/ }),
-
 /***/ "./src/assets/js/main.js":
 /*!*******************************!*\
   !*** ./src/assets/js/main.js ***!
@@ -115,18 +93,40 @@ eval("console.log('file 2');\r\n\n\n//# sourceURL=webpack:///./src/assets/js/fil
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("let burger = document.querySelector('.burger');\r\nlet body = document.querySelector('body');\r\n\r\n\r\n\r\nburger.onclick = function(){\r\n    body.classList.toggle('show-sidebar');\r\n}\r\n\r\n\n\n//# sourceURL=webpack:///./src/assets/js/main.js?");
+eval("let burger = document.querySelector('.burger');\r\nconst body = document.body;\r\nconst modalBtn = document.querySelectorAll('[data-modal');\r\nconst modalClose = document.querySelectorAll('.modal__close');\r\nconst modal = document.querySelectorAll('.modal');\r\n\r\nmodalBtn.forEach(item => {\r\n     item.addEventListener('click', event=>{\r\n       let $this = event.currentTarget;\r\n       let modalId= $this.getAttribute('data-modal');\r\n       let modal = document.getElementById(modalId);\r\n       let modalContent = modal.querySelector('.modal__content');\r\n\r\n       modalContent.addEventListener('click', event =>{\r\n           event.stopPropagation();\r\n       })\r\n\r\n       modal.classList.add('show');\r\n       body.classList.add('no-scroll');\r\n\r\n       setTimeout(() => {\r\n        modalContent.style.transform = \"none\";\r\n        modalContent.style.opacity = \"1\";\r\n       }, 2);\r\n       \r\n     });\r\n});\r\n\r\nmodalClose.forEach(item => {\r\n    item.addEventListener('click', event=>{\r\n        let currentModal = event.currentTarget.closest('.modal');\r\n\r\n        closeModal(currentModal);\r\n    });\r\n});\r\n\r\nmodal.forEach(item => {\r\n    item.addEventListener('click', event=>{\r\n        let currentModal = event.target;\r\n\r\n        closeModal(currentModal);\r\n    });\r\n});\r\n\r\n\r\nfunction closeModal(currentModal) {\r\n  \r\n    let modalContent = currentModal.querySelector('.modal__content');\r\n\r\n    modalContent.removeAttribute('style');\r\n\r\n    setTimeout(() => {\r\n        currentModal.classList.remove('show');\r\n        body.classList.remove(\"no-scroll\");\r\n    }, 250);\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/assets/js/main.js?");
+
+/***/ }),
+
+/***/ "./src/assets/js/mobileNav.js":
+/*!************************************!*\
+  !*** ./src/assets/js/mobileNav.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("let burger = document.querySelector('.burger');\r\nconst page = document.getElementById('page');\r\nconst body = document.body;\r\n\r\n\r\nburger.onclick = function(){\r\n    if( body.classList.contains('show-sidebar') ) {\r\n        closeSidebar();\r\n    } else{\r\n        showSidebar();\r\n    }\r\n};\r\n\r\n\r\nfunction showSidebar(){\r\n    let mask = document.createElement('div');\r\n    mask.classList.add('page__mask');\r\n    mask.addEventListener('click', closeSidebar);\r\n\r\n    page.appendChild(mask);\r\n\r\n    body.classList.add('show-sidebar');\r\n}\r\n\r\n\r\nfunction closeSidebar() {\r\n    body.classList.remove('show-sidebar');\r\n    document.querySelector('.page__mask').remove();\r\n}\n\n//# sourceURL=webpack:///./src/assets/js/mobileNav.js?");
+
+/***/ }),
+
+/***/ "./src/assets/js/textarea.js":
+/*!***********************************!*\
+  !*** ./src/assets/js/textarea.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("const textArea = document.querySelectorAll('[data-autoresize');\r\n\r\ntextArea.forEach(item => {\r\n    let textAreaH = item.offsetHeight;\r\n    item.addEventListener('input', event =>{\r\n        let $this = event.target;\r\n\r\n\r\n        $this.style.height = textAreaH + 'px';\r\n        $this.style.height = $this.scrollHeight + 'px';\r\n    });\r\n});\n\n//# sourceURL=webpack:///./src/assets/js/textarea.js?");
 
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************************************!*\
-  !*** multi ./src/assets/js/app.js ./src/assets/js/file2.js ./src/assets/js/main.js ***!
-  \*************************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** multi ./src/assets/js/main.js ./src/assets/js/mobileNav.js ./src/assets/js/textarea.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! C:\\Users\\Narcos\\Desktop\\Вёрстка\\personal-blog\\src\\assets\\js\\app.js */\"./src/assets/js/app.js\");\n__webpack_require__(/*! C:\\Users\\Narcos\\Desktop\\Вёрстка\\personal-blog\\src\\assets\\js\\file2.js */\"./src/assets/js/file2.js\");\nmodule.exports = __webpack_require__(/*! C:\\Users\\Narcos\\Desktop\\Вёрстка\\personal-blog\\src\\assets\\js\\main.js */\"./src/assets/js/main.js\");\n\n\n//# sourceURL=webpack:///multi_./src/assets/js/app.js_./src/assets/js/file2.js_./src/assets/js/main.js?");
+eval("__webpack_require__(/*! C:\\Users\\Narcos\\Desktop\\Вёрстка\\personal-blog\\src\\assets\\js\\main.js */\"./src/assets/js/main.js\");\n__webpack_require__(/*! C:\\Users\\Narcos\\Desktop\\Вёрстка\\personal-blog\\src\\assets\\js\\mobileNav.js */\"./src/assets/js/mobileNav.js\");\nmodule.exports = __webpack_require__(/*! C:\\Users\\Narcos\\Desktop\\Вёрстка\\personal-blog\\src\\assets\\js\\textarea.js */\"./src/assets/js/textarea.js\");\n\n\n//# sourceURL=webpack:///multi_./src/assets/js/main.js_./src/assets/js/mobileNav.js_./src/assets/js/textarea.js?");
 
 /***/ })
 
